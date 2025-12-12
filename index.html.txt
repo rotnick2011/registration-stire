@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Регистрация</title>
+</head>
+<body>
+
+<input id="name" placeholder="Ваше имя">
+<input id="nick" placeholder="Ник">
+<input id="contact" placeholder="Контакт">
+<button id="btn">Зарегистрироваться</button>
+
+<p id="success" style="display:none;color:green;">Вы успешно зарегистрированы!</p>
+
+<script>
+document.getElementById("btn").addEventListener("click", function() {
+    let n = document.getElementById("name").value.trim();
+    let k = document.getElementById("nick").value.trim();
+    let c = document.getElementById("contact").value.trim();
+
+    if (n === ""  k === ""  c === "") {
+        alert("Заполните все поля!");
+        return;
+    }
+
+    document.getElementById("success").style.display = "block";
+
+    document.getElementById("name").value = "";
+    document.getElementById("nick").value = "";
+    document.getElementById("contact").value = "";
+});
+</script>
+
+</body>
+</html>
